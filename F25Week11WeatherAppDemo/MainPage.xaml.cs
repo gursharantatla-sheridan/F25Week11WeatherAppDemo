@@ -26,6 +26,9 @@ namespace F25Week11WeatherAppDemo
             CityLbl.Text = myWeather.name;
             TemperatureLbl.Text = myWeather.main.temp.ToString("F0") + " \u00B0C";
             ConditionsLbl.Text = myWeather.weather[0].description.ToUpper();
+
+            string iconUrl = $"https://openweathermap.org/img/wn/{myWeather.weather[0].icon}@2x.png";
+            WeatherImg.Source = ImageSource.FromUri(new Uri(iconUrl));
         }
     }
 }
